@@ -1,9 +1,12 @@
-#ifndef SIMULATON_HPP
-#define SIMULATON_HPP
+#ifndef SIMULATONEI_HPP
+#define SIMULATONEI_HPP
 
-#include "CL/cl.hpp"
-#include "GL/glew.h"
-#include "glm/glm.hpp"
+#define GLM_ENABLE_EXPERIMENTAL
+
+#include <GL/glew.h>
+#include <glm/glm.hpp>
+#include <glm/gtx/transform.hpp>
+
 #include "res.hpp"
 
 DEF_STANDARD_TYPES
@@ -12,15 +15,15 @@ typedef glm::vec3 vector;
 struct color;
 struct camera;
 
-namespace sl {  
+namespace sl {
   bool isInit();
   bool isRendering();
   bool isClosed();
   void setObserverCameraAspect(float aspect);
 
-  void init(float _rs, cl::Device device, cl::Context context);
+  void init(float _rs);
 
-  void createEllipticCluster(uint _nParticles, float a, float b, vector n, float dr, float dz,
+  void createEllipticCluster(uint nParticles, float a, float b, vector n, float dr, float dz,
     uint nColors, color* palette, float* blurSizes);
   void clearClusters();
   void selectCluster(int index);
