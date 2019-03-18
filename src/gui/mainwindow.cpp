@@ -1,11 +1,11 @@
-#include <iostream>
-#include <thread>
 #include <QtWidgets/qcolordialog.h>
 #include <QtWidgets/qmessagebox.h>
 #include <QtWidgets/qstyle.h>
 
-#include "fileman.hpp"
-#include "gui/mainwindow.hpp"
+#include "mainwindow.hpp"
+
+#include <iostream>
+#include <thread>
 
 QColor clusterColor = QColor(255, 128, 0, 26);
 QPixmap* clusterColorFill;
@@ -70,7 +70,7 @@ void mainWindow::onWglRenderInitialized() {
 }
 
 // World Property Slots
-void mainWindow::onLedRSTextEdited(const QString& text) {
+void mainWindow::onLedRSTextEdited(UNUSED const QString& text) {
 
 }
 void mainWindow::onRbBgFromPresetToggled(bool checked) {
